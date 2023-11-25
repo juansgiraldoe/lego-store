@@ -1,0 +1,211 @@
+:root{
+  --yellow: #ffd602;
+  --red: #d5040a;
+  --blue: #036cb6;
+}
+
+body{
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+.page{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+.container{
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 20% 50% 30%;
+  grid-template-areas:  "nav     aside"
+                        "section aside"
+                        "footer  aside";
+  height: 100vh;
+  width: 100%;
+}
+.navbar{
+  grid-area: nav;
+  animation: 3s downNav 0.5s;
+  display: flex;
+    align-items: center;
+}
+@keyframes downNav {
+  0%{
+    transform: translateY(-200px);
+  }
+  80%{
+    transform: translateY(-200px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+.navbar__content{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+}
+.navbar__content img{
+  width: 50px;
+  padding-left: 60px;
+  transition: transform 0.3s ease-in-out;
+}
+.navbar__content img:hover{
+  transform: scale(1.1);
+}
+  .navbar__content ul{
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  padding: 0;
+  width: 500px;
+}
+.navbar__content ul li a{
+  color: var(--red);
+  font-weight: 300;
+  text-decoration: none;
+  padding: 4px;
+  border: transparent solid 1px;
+  transition: border-color 0.5s;
+}
+.navbar__content ul li a:hover {
+  border-radius: 4px;
+  border-color: transparent;
+  animation: hoverA 0.5s linear forwards;
+}
+@keyframes hoverA {
+  0%{
+    border-color: transparent solid 1px;
+  }
+  100%{
+    border: var(--red) solid 1px;
+  }
+}
+.navbar__content ul li a:not(:hover) {
+  animation: revertHoverA 0.3s linear forwards; /* Nueva animación al dejar de hacer hover */
+  border-radius: 4px;
+}
+
+@keyframes revertHoverA {
+  0% {
+    border-color: var(--red); /* Cambio de borde al inicio de la animación de revertido */
+  }
+  100% {
+    border-color: transparent; /* Cambio de borde al final de la animación de revertido */
+  }
+}
+  .main-content{
+  grid-area: section;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: 3s mainContent 0.5s ease-in-out;
+  padding-left: 60px;
+}
+@keyframes mainContent {
+  0%{
+    transform: translateY(-800px);
+  }
+  60%{
+    transform: translateY(-800px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+.main-content p:first-child{
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0;
+}
+.main-content h1{
+  font-size: 40px;
+  font-weight: 700;
+  margin: 16px 0;
+}
+.main-content p:last-child{
+  font-size: 20px;
+  font-weight: 100;
+  margin: 0;
+}
+
+.loader{
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 3;
+  animation: loader 3s linear forwards;
+}
+@keyframes loader {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.loader-container{
+  width: 120px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.loader .img-container img{
+  width: 120px;
+  animation: logo 3s ease-in forwards;
+}
+@keyframes logo {
+  0%, 100% {
+    opacity: 0;
+  }
+  20%{
+    opacity: 1;
+  }
+  80%{
+    opacity: 1;
+  }
+}
+.loader .circle{
+  background-color: var(--yellow);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 10px;
+  transform: scale(0);
+  animation: scaling 1.5s ease-in-out infinite;
+}
+.loader div:nth-child(2){
+  animation-delay: 0.2s;
+}
+.loader div:nth-child(3){
+  animation-delay: 0.4s;
+}
+.loader div:nth-child(4){
+  animation-delay: 0.6s;
+}
+  @keyframes scaling {
+  0%, 100%{
+    transform: scale(0.2);
+  }
+  33%{
+    transform: scale(1);
+  }
+  66%{
+    transform: scale(1);
+  }
+}
+
+
