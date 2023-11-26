@@ -37,13 +37,13 @@
       </section>
       <footer>
         <div>
-          <img src="./assets/spiderman.png" alt="" class="spiderman">
+          <img src="./assets/spiderman.png" alt="" class="spiderman" id="hero">
         </div>
         <div>
-          <img src="./assets/robin.png" alt="" class="robin">
+          <img src="./assets/robin.png" alt="" class="robin" id="hero">
         </div>
         <div>
-          <img src="./assets/batman.webp" alt="" class="batman">
+          <img src="./assets/batman.webp" alt="" class="batman" id="hero">
         </div>
       </footer>
     </section>
@@ -60,13 +60,28 @@
     </section>
     <!-- Modal -->
     <section class="modal hidden">
-      <div class="visible">
-        <figure><img src="./assets/close.png" alt="" class="close__modal"></figure>
-        <h3>Supér Héroe Lego</h3>
-        <p>Armalo y juega con el todo el tiempo.</p>
+      <div class="modal_container">
+        <img src="./assets/close.png" alt="Cerrar modal" class="modal_container--close">
+        <div class="modal_content--slider">
+          <h3>Arma tu héroe</h3>
+          <input type="radio" name="slider" id="radio-1" checked>
+          <input type="radio" name="slider" id="radio-2">
+          <input type="radio" name="slider" id="radio-3">
+
+          <div class="cards">
+            <label for="radio-1" id="card-1" class="card">
+              <img src="./assets/slider-spiderman.png" alt="">
+            </label>
+            <label for="radio-2" id="card-2" class="card">
+              <img src="./assets/slider-spiderman-2.png" alt="">
+            </label>
+            <label for="radio-3" id="card-3" class="card">
+              <img src="./assets/slider-spiderman-3.png" alt="">
+            </label>
+          </div>
+            <button href="">Comprar <span><img src="./assets/icons-carts.png" alt="Icono de carrito"></span></button>
+        </div>
       </div>
-    </section>
-  </div>
   <script src="./main.js"></script>
 </body>
 </html>

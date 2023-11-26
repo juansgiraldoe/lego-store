@@ -1,17 +1,19 @@
-const spiderman = document.querySelector('.spiderman')
-const robin = document.querySelector('.robin')
-const batman = document.querySelector('.batman')
+const heroes = document.querySelectorAll('#hero')
 const modal = document.querySelector('.modal')
-const hiddenModal = document.querySelector('.close__modal')
+const hideModal = document.querySelector('.modal_container--close')
 
-spiderman.addEventListener('click', showModal)
-robin.addEventListener('click', showModal)
-batman.addEventListener('click', showModal)
-hiddenModal.addEventListener('click', closeModal)
+heroes.forEach(hero => {
+  hero.addEventListener('click', showModal);
+});
+
+modal.addEventListener('click', closeModal)
+hideModal.addEventListener('click', closeModal)
 
 function showModal() {
   modal.classList.remove('hidden')
+  modal.classList.add('visible')
 }
 function closeModal() {
   modal.classList.add('hidden')
+  modal.classList.remove('add')
 }
